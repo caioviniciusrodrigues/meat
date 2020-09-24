@@ -13,7 +13,7 @@ import { Restaurant } from './restaurant/restaurant.model';
 @Injectable()
 export class RestaurantService {
 
-  url = environment.baseUrl;
+  private url = environment.baseUrl;
 
   constructor( private http: Http ) { }
 
@@ -24,7 +24,7 @@ export class RestaurantService {
   }
 
   restaurantById(id: string): Observable<Restaurant> {
-    return this.http.get(`${this.url}/restaurant/${id}`)
+    return this.http.get(`${this.url}/restaurants/${id}`)
       .map(response => response.json())
       .catch(ErrorHandler.handleError);
   }
