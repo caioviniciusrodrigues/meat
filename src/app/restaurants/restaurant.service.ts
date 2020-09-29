@@ -6,6 +6,7 @@ import { Observable } from 'rxjs/Observable';
 import { environment } from '../../environments/environment.prod';
 import { ErrorHandler } from '../app.error';
 import { Restaurant } from './restaurant/restaurant.model';
+import { MenuItem } from './restaurant-detail/menu-item/menu-item.model';
 
 
 
@@ -31,6 +32,12 @@ export class RestaurantService {
 
   reviewsOfRestaurant(id: string): Observable<any> {
     return this.http.get(`${this.url}/restaurants/${id}/reviews`)
+      .map(response => response.json())
+      .catch(ErrorHandler.handleError);
+  }
+
+  menuOfRestaurant(id: string): Observable<MenuItem[]> {
+    return this.http.get(`${this.url}/restaurants/${id}/menu`)
       .map(response => response.json())
       .catch(ErrorHandler.handleError);
   }
