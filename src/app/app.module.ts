@@ -18,6 +18,9 @@ import { ShoppingCartComponent } from './restaurants/restaurant-detail/shopping-
 import { MenuItemComponent } from './restaurants/restaurant-detail/menu-item/menu-item.component';
 import { ReviewsComponent } from './restaurants/restaurant-detail/reviews/reviews.component';
 import { ShoppingCartService } from './restaurants/restaurant-detail/shopping-cart/shopping-cart.service';
+import { OrderComponent } from './order/order.component';
+import { FormsModule } from '@angular/forms';
+import { InputComponent } from './shared/input/input.component';
 
 
 @NgModule({
@@ -32,13 +35,16 @@ import { ShoppingCartService } from './restaurants/restaurant-detail/shopping-ca
     MenuComponent,
     ShoppingCartComponent,
     MenuItemComponent,
-    ReviewsComponent
+    ReviewsComponent,
+    OrderComponent,
+    InputComponent
   ],
   imports: [
     BrowserModule,
     HttpModule,
     RouterModule,
     HttpModule,
+    FormsModule,
     AppRoutingModule
   ],
   providers: [RestaurantService, ShoppingCartService, {provide: LOCALE_ID, useValue: 'pt-BR'}],
