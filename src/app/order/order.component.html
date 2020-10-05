@@ -29,8 +29,8 @@
             </div>
 
             <div class="col-sm-2 col-xs-6">
-              <mt-input-container label="Número" errorMessage="Campo obrigatório.">
-                <input placeholder="Número" class="form-control" name="number" ngModel required autocomplete="off">
+              <mt-input-container label="Número" errorMessage="Campo obrigatório e somente números.">
+                <input placeholder="Número" class="form-control" pattern="^[0-9]*$" name="number" ngModel required autocomplete="off">
               </mt-input-container>
             </div>
 
